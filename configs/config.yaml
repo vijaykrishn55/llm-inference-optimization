@@ -1,0 +1,31 @@
+model:
+  id: "Qwen/Qwen3-1.7B"
+  quantized_dir: "models/qwen3-1.7b-awq"
+
+quantization:
+  method: "awq"
+  scheme: "W4A16_ASYM"
+  calibration_samples: 32
+  sequence_length: 512
+  group_size: 128
+
+evaluation:
+  dataset: "wikitext"
+  dataset_config: "wikitext-2-raw-v1"
+  split: "test"
+  max_samples: 100
+
+inference:
+  max_model_len: 2048
+  max_new_tokens: 128
+  temperature: 0.0
+
+benchmark:
+  prompts: 20
+  input_len: 128
+  output_len: 128
+
+speculative:
+  enabled: true
+  draft_model: "Qwen/Qwen3-0.6B"
+  num_speculative_tokens: 5
