@@ -78,7 +78,7 @@ def run_awq_quantization(
         from datasets import Dataset
         from transformers import AutoModelForCausalLM, AutoTokenizer
         from llmcompressor import oneshot
-        from llmcompressor.modifiers.transform.awq import AWQTransformModifier
+        from llmcompressor.modifiers.transform.awq import AWQModifier
         from llmcompressor.modifiers.quantization import QuantizationModifier
     except ImportError as exc:
         raise RuntimeError(
@@ -127,7 +127,7 @@ def run_awq_quantization(
     calibration_dataset = Dataset.from_list(tokenized_records)
 
     recipe = build_awq_recipe(
-        AWQTransformModifier,
+        AWQModifier,
         QuantizationModifier,
         scheme=config.quantization_scheme,
     )
