@@ -52,3 +52,7 @@ def test_save_report_creates_directory_and_valid_json(tmp_path):
 def test_save_report_rejects_non_json_number(tmp_path):
     with pytest.raises(ValueError):
         save_report({"value": float("nan")}, tmp_path / "report.json")
+
+def test_select_model_id_accepts_list_response():
+    response = [{"id": "artifacts/quantized_model"}]
+    assert select_model_id(response) == "artifacts/quantized_model"

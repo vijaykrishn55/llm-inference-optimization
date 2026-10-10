@@ -15,15 +15,21 @@ logger = logging.getLogger(__name__)
 
 
 def select_model_id(
-    models_response: dict,
+    models_response: dict | list,
     requested_model: str | None = None,
 ) -> str:
     """Choose a requested model or the first model served by vLLM."""
     if requested_model:
         return requested_model
 
-    models = models_response.get("data", [])
-    if not models or not isinstance(models, list):
+    if isinstance(models_response, list):
+        models = models_response
+    elif isinstance(models_response, dict):
+        models = models_response.get("data", [])
+    else:
+        raise ValueError("Invalid model-list response from vLLM.")
+
+    if not models:
         raise ValueError("The vLLM server returned no available models.")
 
     model_id = models[0].get("id")
