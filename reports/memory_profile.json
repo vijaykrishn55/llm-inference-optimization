@@ -1,0 +1,46 @@
+{
+  "timestamp_utc": "2026-10-10T18:06:58.435978+00:00",
+  "model_dir": "artifacts/quantized_model",
+  "profile": {
+    "gpu_stats": [
+      {
+        "gpu_name": "Tesla T4",
+        "memory_total_mib": 15360.0,
+        "memory_used_mib": 10147.0,
+        "memory_free_mib": 4765.0,
+        "gpu_utilization_percent": 0.0
+      },
+      {
+        "gpu_name": "Tesla T4",
+        "memory_total_mib": 15360.0,
+        "memory_used_mib": 3.0,
+        "memory_free_mib": 14909.0,
+        "gpu_utilization_percent": 0.0
+      }
+    ],
+    "vllm_metrics": {
+      "kv_cache_usage_fraction": 0.0,
+      "metric_name": "vllm:kv_cache_usage_perc",
+      "samples": [
+        0.0
+      ]
+    },
+    "configuration": {
+      "batch_size": 1,
+      "sequence_length": 512,
+      "bytes_per_element": 2
+    },
+    "memory_components": {
+      "model_artifact_bytes": 1626009675,
+      "kv_cache_estimate_bytes": 14680064,
+      "activation_estimate_bytes": 13893632,
+      "estimated_component_sum_bytes": 1654583371
+    },
+    "notes": [
+      "GPU memory is measured with nvidia-smi at profiling time.",
+      "Model artifact size is an on-disk measurement, not exact GPU weight memory.",
+      "KV-cache and activation values are estimates, not measured allocations.",
+      "GPU memory also includes runtime overhead and other allocations."
+    ]
+  }
+}

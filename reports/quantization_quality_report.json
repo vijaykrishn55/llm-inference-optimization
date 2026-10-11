@@ -1,0 +1,32 @@
+{
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "evaluation_dataset": "WikiText-2 test split",
+  "evaluation_examples_requested": 64,
+  "max_sequence_length": 512,
+  "baseline": {
+    "mean_loss": 2.9286052481484197,
+    "perplexity": 18.70152830663237,
+    "tokens_evaluated": 5587,
+    "accuracy": 0.43261141936638625,
+    "examples_evaluated": 64
+  },
+  "quantized": {
+    "mean_loss": 2.9979233338492746,
+    "perplexity": 20.043869248439467,
+    "tokens_evaluated": 5587,
+    "accuracy": 0.4170395561124038,
+    "examples_evaluated": 64
+  },
+  "perplexity_comparison": {
+    "baseline_perplexity": 18.70152830663237,
+    "quantized_perplexity": 20.043869248439467,
+    "change": 1.3423409418070982,
+    "change_percent": 7.1777071894763065
+  },
+  "accuracy_comparison": {
+    "baseline_accuracy": 0.43261141936638625,
+    "quantized_accuracy": 0.4170395561124038,
+    "drop_percentage_points": 1.5571863253982465,
+    "relative_drop_percent": 3.599503516756311
+  }
+}

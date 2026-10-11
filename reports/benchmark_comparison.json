@@ -1,0 +1,57 @@
+{
+  "timestamp_utc": "2026-10-10T17:52:59.406825+00:00",
+  "baseline_report": "reports/benchmark_baseline.json",
+  "optimized_report": "reports/benchmark_optimized.json",
+  "baseline_model": "artifacts/fp16_model",
+  "optimized_model": "artifacts/quantized_model",
+  "metric_comparisons": {
+    "mean_ttft_ms": {
+      "baseline": 176.732,
+      "optimized": 81.303,
+      "change_percent": -53.996,
+      "improvement_percent": 53.996
+    },
+    "median_ttft_ms": {
+      "baseline": 79.904,
+      "optimized": 70.518,
+      "change_percent": -11.747,
+      "improvement_percent": 11.747
+    },
+    "mean_itl_ms": {
+      "baseline": 26.258,
+      "optimized": 8.438,
+      "change_percent": -67.865,
+      "improvement_percent": 67.865
+    },
+    "mean_latency_ms": {
+      "baseline": 3511.641,
+      "optimized": 1107.095,
+      "change_percent": -68.474,
+      "improvement_percent": 68.474
+    },
+    "request_throughput_per_second": {
+      "baseline": 0.285,
+      "optimized": 0.903,
+      "change_percent": 216.842,
+      "improvement_percent": 216.842
+    },
+    "token_throughput_per_second": {
+      "baseline": 36.448,
+      "optimized": 110.717,
+      "change_percent": 203.767,
+      "improvement_percent": 203.767
+    },
+    "failure_rate_percent": {
+      "baseline": 0.0,
+      "optimized": 0.0,
+      "change_percent": 0.0,
+      "improvement_percent": 0.0
+    }
+  },
+  "notes": [
+    "Positive improvement means the metric moved in the preferred direction.",
+    "Lower TTFT, ITL, latency, and failure rate are better.",
+    "Higher request and token throughput are better.",
+    "A percentage change is undefined when the baseline is zero and the optimized value is nonzero."
+  ]
+}

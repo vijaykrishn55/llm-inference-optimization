@@ -1,0 +1,19 @@
+{
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "quantization_method": "awq",
+  "quantization_scheme": "W4A16_ASYM",
+  "calibration_dataset": "wikitext",
+  "calibration_samples": 64,
+  "max_sequence_length": 512,
+  "fp16_model_path": "artifacts/fp16_model",
+  "quantized_model_path": "artifacts/quantized_model",
+  "original_bytes": 3098893515,
+  "quantized_bytes": 1626009675,
+  "reduction_bytes": 1472883840,
+  "reduction_percent": 47.52934661583556,
+  "original_size_mb": 3098.893515,
+  "quantized_size_mb": 1626.009675,
+  "quantization_seconds": 116.02354486500008,
+  "peak_gpu_memory_bytes": 2049545728,
+  "peak_gpu_memory_gib": 1.9087882041931152
+}
